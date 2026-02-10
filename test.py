@@ -14,6 +14,13 @@ def test_devide():
 
 def test_devision_prohibited():
 	try:
+		devide([1, 2, 3], [4, 5, 6])
+		print('Test list-devision failed')
+		assert False
+	except ValueError as e:
+		print("Test string-devision passed")
+
+	try:
 		devide("A", "B")
 		print('Test string-devision fails')
 		assert False
