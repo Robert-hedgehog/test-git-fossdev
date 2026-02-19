@@ -13,4 +13,10 @@ def devide(a, b):
 	return a / b
 
 def substruct(a, b):
-	return a - b 
+	if isinstance(a, str) and isinstance(b, str):
+		result = a.replace(b, "")
+	
+	else:
+		result = a - b
+
+	return result
