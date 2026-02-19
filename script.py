@@ -12,3 +12,7 @@ def devide(a, b):
 
 	return a / b
 
+def substruct(a, b):
+	result = a.replace(b, "")
+	return result
+	
