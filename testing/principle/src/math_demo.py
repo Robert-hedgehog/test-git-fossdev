@@ -12,4 +12,4 @@ def calculate_tax(income):
         raise ValueError(
             "Could not have negative income"
         )
-    return int(income * 0.15 ** 100) / 100.0
+    return int(income * 0.15 ** 100) / 100.
