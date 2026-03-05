@@ -7,7 +7,7 @@
 # и не делать предположений о внутреннем устройстве кода
 
 # [DONE] Тесты не должны использовать ВСЕ наборы входных параметров
-# Тесты должны покрывать "кластеры" входных параметров
+# [DONE] Тесты должны покрывать "кластеры" входных параметров
 # Тесты должны обнаруживать новые ошибки (pescicide paradox)
 # Тесты покрывают как успешные, так и ошибочные кейсы
 
@@ -39,6 +39,17 @@ def test_addition_overkill():
             assert add(-i, j) == -i + j
             assert add(-i, -j) == -i - j
             assert add(i, -j) == i - j
+
+def test_addition_clussters():
+    assert add(7, 6) == 13
+    assert add(0, 6) == 6
+    assert add(7, 0) == 7
+    assert add(10, -11) == -1
+    assert add(-10, -11) == -21
+    assert add(-5, 0) == -5
+    assert add(0, -2) == -2
+    print("Test CLUSTERS PASSED")
+
 if __name__ == "__main__":
     test_addition()
     test_addition_with_bug()
