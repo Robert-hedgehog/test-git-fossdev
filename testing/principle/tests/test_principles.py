@@ -16,7 +16,7 @@
 
 # Тесты покрывают как успешные, так и ошибочные кейсы
 
-from math_demo import (add, add_with_bug, calclate_tax_bugged, calclate_tax)
+from math_demo import (add, add_with_bug, calculate_tax_bugged, calculate_tax)
 
 def test_addition():
     assert add(2, 2) == 4
@@ -60,25 +60,32 @@ def test_addition_commutative():
     assert add(5, 9) == 14
     print("Test COMMUTATIVE PASSED")
 
-def test_tax_calclator_pesticide():
-    assert calclate_tax_bugged(1000) == 150
-    assert calclate_tax_bugged(100) == 15
-    assert calclate_tax_bugged(10) == 1.5
-    assert calclate_tax_bugged(1) == 0.15
-    assert calclate_tax_bugged(234) == 35.1
+def test_tax_calculator_pesticide():
+    assert calculate_tax_bugged(1000) == 150
+    assert calculate_tax_bugged(100) == 15
+    assert calculate_tax_bugged(10) == 1.5
+    assert calculate_tax_bugged(1) == 0.15
+    assert calculate_tax_bugged(234) == 35.1
     print("Test TAX CALCULATOR PASSED")
     # float may give us test cases
     # not available when using int
-    # assert calclate_tax_bugged(2.34) == 0.35 # 0.351
+    # assert calculate_tax_bugged(2.34) == 0.35 # 0.351
 
 def test_tax_calculartor():
-    assert calclate_tax(1000) == 150
-    assert calclate_tax(100) == 15
-    assert calclate_tax(10) == 1.5
-    assert calclate_tax(1) == 0.15
-    assert calclate_tax(234) == 35.1
-    assert calclate_tax(2.34) == 0.35 # 0.351
+    assert calculate_tax(1000) == 150
+    assert calculate_tax(100) == 15
+    assert calculate_tax(10) == 1.5
+    assert calculate_tax(1) == 0.15
+    assert calculate_tax(234) == 35.1
+    assert calculate_tax(2.34) == 0.35 # 0.351
     print("Test UNBUGGED TAX CALCULATOR PASSED")
+
+def test_negative_income():
+    try:
+        calculate_tax(-100)
+        print("Test NEGATIVE INCOME FAILED")
+    except ValueError as e:
+        print("Test NEGATIVE INCOME PASSED")
 
 if __name__ == "__main__":
     test_addition()
@@ -87,5 +94,6 @@ if __name__ == "__main__":
     # test_addition_overkill() # can try it on your risk
     test_addition_clussters()
     test_addition_commutative()
-    test_tax_calclator_pesticide()
+    test_tax_calculator_pesticide()
     test_tax_calculartor()
+    test_negative_income()
