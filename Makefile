@@ -1,13 +1,15 @@
+.DEFAULT_GOAL := help
+
 create-practice:
 ifndef PRACTICE
-	$(error must pass val PRACTICE)
+	$(error must pass val via PRACTICE)
 endif
 	@echo "Creating practice"
 	mkdir -p $(PRACTICE)
 
 remove-practice:
 ifndef PRACTICE
-	$(error must pass val PRACTICE)
+	$(error must pass val via PRACTICE)
 endif
 	rm -rf $(PRACTICE)
 
