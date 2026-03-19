@@ -1,9 +1,15 @@
-create-prcatice:
+create-practice:
+ifndef PRACTICE
+	$(error must pass val PRACTICE)
+endif
 	@echo "Creating practice"
-	mkdir demo-practice
+	mkdir -p $(PRACTICE)
 
 remove-practice:
-	rm -rf demo-practice
+ifndef PRACTICE
+	$(error must pass val PRACTICE)
+endif
+	rm -rf $(PRACTICE)
 
 help:
 	@echo "This makefile for repo-level activity"
