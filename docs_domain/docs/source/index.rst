@@ -1,10 +1,10 @@
-.. source documentation master file, created by
-   sphinx-quickstart on Thu Apr  2 14:04:43 2026.
+.. sales documentation master file, created by
+   sphinx-quickstart on Thu Apr  2 14:25:49 2026.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-source documentation
-====================
+sales documentation
+===================
 
 Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
